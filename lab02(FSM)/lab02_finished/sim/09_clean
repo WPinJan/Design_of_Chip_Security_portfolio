@@ -1,0 +1,16 @@
+rm -rf *.log
+rm -rf tmp_*_vcs
+rm -rf simv.daidir
+rm -rf csrc
+rm -rf ucli.key
+rm -rf verdiLog
+rm -rf novas.*
+rm -rf DVEfiles
+rm -rf nWaveLog
+rm -rf cov_fifo_io
+rm -rf cov_dpi_c
+rm -rf simv
+rm -rf vc_hdrs.h
+rm -rf vdCovLog
+rm -rf VerdiLog
+rm -rf *.fsdb
