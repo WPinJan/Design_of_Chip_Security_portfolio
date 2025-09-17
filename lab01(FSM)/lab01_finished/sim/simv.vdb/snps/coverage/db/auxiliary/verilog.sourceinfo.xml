@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE cov SYSTEM "ucdb_srcinfo.dtd">
+  <srcinfo name="/home/m113/m113063572/lab01/sim"  >
+    <ucapi_version  major_ver="13"  minor_ver="1"  patch_str="T-2022.06"  />
+      <fileinfo name="file.v"  id="0"  timestamp="1744010272"  />
+      <fileinfo name="../tb/tb_top.sv"  id="1"  timestamp="1744899417"  />
+      <fileinfo name="../bfm/test_case/test_include.v"  id="2"  timestamp="1744013166"  />
+      <fileinfo name="../bfm/test_case/./test_sha256.v"  id="3"  timestamp="1744816167"  />
+      <fileinfo name="../bfm/tx.v"  id="4"  timestamp="1744865228"  />
+      <fileinfo name="../bfm/rx.v"  id="5"  timestamp="1744008677"  />
+      <fileinfo name="../bfm/chkr.v"  id="6"  timestamp="1744009525"  />
+      <fileinfo name="../rtl/dut_include.v"  id="7"  timestamp="1744366101"  />
+      <fileinfo name="../rtl/sha2_msg.v"  id="8"  timestamp="1744901235"  />
+    </srcinfo>
