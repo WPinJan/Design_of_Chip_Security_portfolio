@@ -1,0 +1,12 @@
+if grep -q "Error" lint_summary.log ; then
+   echo lint check fail !!! Severity: Error
+fi
+
+if grep -q "Warning" lint_summary.log ; then
+   echo lint check fail !!! Severity: Warning
+fi
+
+if grep -q "Mandatory" lint_summary.log ; then
+   echo lint check fail !!! Severity: Mandatory
+fi
+
