@@ -1,0 +1,3 @@
+current_design sha2
+sdc_data -file constraints.sdc
+
