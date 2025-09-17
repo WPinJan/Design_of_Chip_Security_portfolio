@@ -1,0 +1,1 @@
+verdi -sv -f sim.f -ssf wave.fsdb &

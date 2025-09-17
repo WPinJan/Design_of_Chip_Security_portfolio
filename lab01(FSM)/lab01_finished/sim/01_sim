@@ -1,0 +1,9 @@
+rm -rf simv
+rm -rf simv.daidir
+
+vcs -full64 -R -debug_acc+all+dmptf -debug_region+cell+encrypt\
+    -cm line+branch+cond+fsm \
+    -f vcs.f \
+    -f sim.f \
+    -l sim.log \
+    "$@"
