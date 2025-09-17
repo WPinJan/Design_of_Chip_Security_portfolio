@@ -1,0 +1,71 @@
+#
+#Specify Library
+#
+set_app_var search_path [concat $search_path ../rtl/ \
+/usr/cadtool/cbdk/CBDK_TSMC40_Arm_f2.0/CIC/SynopsysDC/db/sc9_base_rvt/]
+
+set_app_var target_library {sc9_cln40g_base_rvt_tt_typical_max_0p90v_25c.db}
+#set symbol_library {vendor_xxx.sdb}
+set_app_var synthetic_library {dw_foundation.sldb}
+set_app_var link_library [concat $target_library $synthetic_library "*"]
+
+
+#
+#Read Design Files
+#
+analyze -format verilog dut_include.v
+set DESIGN_TOP sha2_msg
+elaborate $DESIGN_TOP
+
+
+#
+#Define Design Environment
+#
+set_operating_conditions tt_typical_max_0p90v_25c
+set_wire_load_model -name Small
+set_wire_load_mode segmented
+
+
+#
+#Set Design Constraints
+#
+#set_driving_cell -lib_cell INV_X0P5B_A9TR -pin Y [all_inputs]
+set_load 0.1 [all_outputs]
+
+create_clock -name clk -period 20 [get_ports clk]
+set_clock_uncertainty -setup 0.5 clk
+set_clock_uncertainty -hold  0.2 clk
+
+set_input_delay  4 -clock clk [all_inputs]
+set_output_delay 4 -clock clk [all_outputs]
+
+
+#
+#Synthesize and Optimize Design
+#
+check_design
+set_fix_multiple_port_nets -all -buffer_constants
+set_max_area 0
+compile_ultra -no_autoungroup -no_seq_output_inversion
+optimize_netlist -area
+
+
+#
+#Analyze and Resolve Design Problems
+#
+report_constraint -verbose > syn_cons.log
+report_area -hierarchy -designware > syn_area.log
+report_timing -max_path 10 > syn_timing.log
+
+
+#
+#Save Design Database
+#
+change_names -rules verilog
+write -format verilog -hier -out $DESIGN_TOP.vg
+
+report_resources > syn_resources.log
+#
+#Exit the script
+#
+exit
