@@ -1,0 +1,11 @@
+if grep "Latch" syn_dc_shell.log ; then
+   echo Error, Design has latch
+fi
+
+if grep "loop" syn_dc_shell.log ; then
+   echo Error, Design has loop
+fi
+
+if grep "VIOLATED" syn_timing.log ; then
+   echo Error, Design has violation
+fi
