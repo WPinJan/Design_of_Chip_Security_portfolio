@@ -10,7 +10,7 @@ We used **Verilog** throughout the course. The main tools employed were **Synops
 - **Lab2** – Design and verification of the complete hash algorithm
 - **Lab3** – FPGA prototyping of the hash algorithm
 
-In the report of the labs, there are block diagram, module structure, FSM flow chart, waveform by wavedrom. Also note that all design rtl code and testbench included testcase are designed by myself.
+In the report of the labs, there are block diagram, module structure, FSM flow chart, waveform by wavedrom. Also note that all design RTL code and testbench including testcase are designed by myself.
 
 ---
 
