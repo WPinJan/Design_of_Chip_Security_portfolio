@@ -2,7 +2,7 @@
 
 This repository contains all the labs I completed during my **Design of Chip Security** course in 2025. The topics include combinational circuit design, sequential circuit design, finite state machine (FSM), verification, synthesis, and FPGA prototyping.
 
-We used **Verilog** throughout the course. The main tools employed were **Synopsys VCS** for simulation and **Verdi** for waveform and debugging. 
+We used **Verilog** throughout the course. The main tools employed were **Synopsys VCS** for simulation, **Synopsys DC** for synthesis, and **Verdi** for waveform and debugging. 
 
 ## 🔸 Lab List
 
