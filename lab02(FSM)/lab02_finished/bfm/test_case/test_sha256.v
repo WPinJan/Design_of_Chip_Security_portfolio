@@ -1,4 +1,3 @@
-//This is test_case
 initial begin
    if($test$plusargs("test_sha256")) begin
 	   @(ev_rst_done);
@@ -30,8 +29,8 @@ initial begin
        CHKR.setcfg_length(RX_TESTLEN);
        CHKR.setcfg_check_unknown(1);
        CHKR.setcfg_check_overflow(1);
-       CHKR.setcfg_pass_showmsg(1);//fail msg is always shown
-       CHKR.setcfg_fail_stopsim(1);//fail then call $finish
+	   CHKR.setcfg_pass_showmsg(1);    //fail msg shown or not
+	   CHKR.setcfg_fail_stopsim(1);    //fail then call $finish or not
 
        //start the test
        fork
@@ -42,7 +41,7 @@ initial begin
 
        //wait done
        @(posedge clk);
-       while (tx_busy | rx_busy)begin//check bfm busy status
+	   while (tx_busy | rx_busy)begin  //check bfm busy status
           @(posedge clk);
        end 
       
