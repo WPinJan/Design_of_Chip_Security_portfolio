@@ -1,0 +1,39 @@
+////////////////////
+// test tasks
+////////////////////
+task test_begin;			//wait for reset done
+   begin
+      $display({"\n",
+      "#############################################################\n",
+      " BFM TEST IS ON\n",
+      "#############################################################\n"});
+      @(posedge rst_n);
+      $display($time,,"Reset is finish");
+   end
+endtask
+
+task test_report;
+   begin
+	  @(posedge clk);
+	  $display("pass count = %d, fail count = %d", pass_cnt, fail_cnt);
+      if(fail_cnt==0 && pass_cnt==DGST_NUMB) begin
+         $display({"\n",
+         "#############################################################\n",
+         " BFM TEST IS PASSED\n",
+         "#############################################################\n"});
+      end
+      else begin
+         $display({"\n",
+         "#############################################################\n",
+         " BFM TEST IS FAILED\n",
+         "#############################################################\n"});
+      end
+   end
+endtask
+
+task test_end;
+   begin
+      #100 $finish;
+   end
+endtask
+
