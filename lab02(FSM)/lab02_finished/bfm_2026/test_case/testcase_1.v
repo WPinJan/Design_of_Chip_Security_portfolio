@@ -25,10 +25,10 @@ initial begin
 				TX.first_write(i, j);
 				if(msg_lst_vec[j] != 1) begin
 					while(msg_lst_vec[j+1] != 1) begin
-						TX.handshake_and_write(j+1,0);
+						TX.handshake_and_write(j+1,PROB);
 						j = j + 1;
 					end
-					TX.handshake_and_write(j+1,0);
+					TX.handshake_and_write(j+1,PROB);
 				end
 				TX.end_writing;
 			end
