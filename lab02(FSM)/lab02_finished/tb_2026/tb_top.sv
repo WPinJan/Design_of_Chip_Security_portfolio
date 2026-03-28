@@ -2,6 +2,7 @@
 `define INPUT_WORD_NUMB  1220;
 `define OUTPUT_WORD_SIZE 256;
 `define OUTPUT_MSG_NUMB  30;
+`define VALID_PAUSE_PROB 0;
 
 module tb_top;
   
@@ -15,6 +16,7 @@ module tb_top;
    localparam DGST_NUMB  = `OUTPUT_MSG_NUMB;
    localparam WIDTH_OF_LEN = 64;
    localparam WIDTH_OF_BE  = 4;
+   localparam PROB       = `VALID_PAUSE_PROB;
 
    //==============================
    // signals
